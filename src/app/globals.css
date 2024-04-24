@@ -2,32 +2,43 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+.container{
+    width: 90%;
+    margin: 0 auto;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+@media (max-width: 576px) {
+  html{
+    font-size: 12px;
   }
+  .container{
+    width: 98%;
+    margin: 0 auto;
+}
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+.category-title::before {
+  content: "";
+  position: absolute;
+  top: -11%;
+  left: 2px;
+  
+  width: 40px;
+  height: 40px;
+  background-image: url("../app/assets/Polygon.png");
+  /* background-size: contain; */
+  background-repeat: no-repeat;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+.swiper-pagination-bullet {
+   width: 45px !important;
+    height: 7px !important;
+    background-color: #AA9393 !important;
+    border-radius: 6px !important;
+    margin: 0 5px !important;
+    opacity: 1 !important;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #034E53 !important;
 }
